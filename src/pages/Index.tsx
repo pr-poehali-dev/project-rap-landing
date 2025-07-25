@@ -3,130 +3,109 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-
-  const merch = [
-    { id: 1, name: "Худи с логотипом", price: "3999₽", image: "/img/49185ea2-b482-4fa4-8d82-a226525b0f91.jpg" },
-    { id: 2, name: "Кепка snapback", price: "1899₽", image: "/img/bf1c05bc-19b0-461a-ad8e-d9d069ead8f6.jpg" },
-    { id: 3, name: "Футболка лимитка", price: "2199₽", image: "/img/5c195a8c-3e84-4cef-9cba-c8a0023faf34.jpg" },
-  ];
-
-  const news = [
-    { id: 1, date: "25 июля", title: "Новый альбом уже скоро!", text: "Работаю над 12 треками для нового альбома. Релиз планируется на сентябрь." },
-    { id: 2, date: "20 июля", title: "Выступление в Москве", text: "Выступил на крупном фестивале в Москве. Зал был забит до отказа!" },
-    { id: 3, date: "15 июля", title: "Клип набрал 1М просмотров", text: "Клип на трек 'Улицы зовут' достиг отметки в миллион просмотров на YouTube." },
-  ];
-
   return (
-    <div className="min-h-screen bg-background text-foreground font-open-sans">
+    <div className="min-h-screen bg-black text-white font-urban">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-background/90 backdrop-blur-sm border-b border-border z-50">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-sm border-b border-gray-800">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-oswald font-bold text-primary">АРТИСТ</div>
+            <div className="text-2xl font-rap font-bold text-primary">RAP ARTIST</div>
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-primary transition-colors">Главная</a>
-              <a href="#about" className="hover:text-primary transition-colors">О творчестве</a>
-              <a href="#merch" className="hover:text-primary transition-colors">Мерч</a>
-              <a href="#news" className="hover:text-primary transition-colors">Новости</a>
-              <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
+              <a href="#home" className="hover:text-primary transition-colors duration-300">Главная</a>
+              <a href="#about" className="hover:text-primary transition-colors duration-300">О себе</a>
+              <a href="#music" className="hover:text-primary transition-colors duration-300">Музыка</a>
+              <a href="#contact" className="hover:text-primary transition-colors duration-300">Контакты</a>
             </div>
-            <Button variant="outline" size="sm" className="md:hidden">
-              <Icon name="Menu" size={20} />
+            <Button className="md:hidden" variant="ghost" size="sm">
+              <Icon name="Menu" size={24} />
             </Button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-20 min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-background"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-6xl md:text-8xl font-oswald font-bold mb-6 animate-fade-in">
-            РЭП<span className="text-primary">АРТИСТ</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto animate-fade-in">
-            Начинающий рэп-исполнитель из России. Пишу о том, что волнует молодежь — уличную жизнь, мечты и борьбу за место под солнцем.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button variant="outline" size="lg" className="font-oswald text-lg px-8">
-              <Icon name="ShoppingBag" size={20} className="mr-2" />
-              Купить мерч
-            </Button>
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Urban Background Effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-1 h-1 bg-accent rounded-full animate-pulse delay-1000"></div>
+            <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-500"></div>
+            <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-accent rounded-full animate-pulse delay-1500"></div>
           </div>
-          
-          {/* Music Platforms */}
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <a 
-              href="#" 
-              className="flex items-center space-x-2 bg-card/50 hover:bg-card/70 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <Icon name="Music" size={20} className="text-primary" />
-              <span className="font-oswald font-bold">ВК Музыка</span>
-            </a>
-            <a 
-              href="#" 
-              className="flex items-center space-x-2 bg-card/50 hover:bg-card/70 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <Icon name="Music" size={20} className="text-accent" />
-              <span className="font-oswald font-bold">Яндекс Музыка</span>
-            </a>
-            <a 
-              href="#" 
-              className="flex items-center space-x-2 bg-card/50 hover:bg-card/70 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <Icon name="Music" size={20} className="text-primary" />
-              <span className="font-oswald font-bold">Apple Music</span>
-            </a>
+        </div>
+        
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-8xl md:text-9xl font-rap font-black mb-6 animate-fade-in">
+            <span className="text-primary">RAP</span>
+            <br />
+            <span className="text-white">ARTIST</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto animate-slide-up font-urban">
+            Уличная культура. Честные тексты. Мощные биты.
+            <br />
+            Живу рэпом. Дышу музыкой.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-bounce-in">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-rap font-bold text-lg px-8 py-4">
+              <Icon name="Play" size={20} className="mr-2" />
+              Слушать музыку
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-rap font-bold text-lg px-8 py-4">
+              <Icon name="User" size={20} className="mr-2" />
+              Обо мне
+            </Button>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-secondary/30">
+      <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-12">
-            О <span className="text-primary">ТВОРЧЕСТВЕ</span>
+          <h2 className="text-6xl md:text-7xl font-rap font-black text-center mb-16">
+            МОЯ <span className="text-primary">ИСТОРИЯ</span>
           </h2>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="font-oswald font-bold text-2xl mb-6 text-accent">Мой путь в рэпе</h3>
-              <p className="text-lg leading-relaxed mb-6">
-                Начал писать тексты в 16 лет, вдохновляясь уличной культурой и историями обычных людей. 
-                Каждый трек — это частичка моей души и взгляд на жизнь молодого поколения.
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <h3 className="font-rap font-bold text-3xl mb-6 text-accent">От улиц до студии</h3>
+              <p className="text-lg leading-relaxed text-gray-300">
+                Начал писать тексты в подворотнях, где каждое слово — это правда жизни. 
+                Рэп для меня не просто музыка, это способ рассказать миру о том, что происходит на улицах.
               </p>
-              <p className="text-lg leading-relaxed mb-6">
-                Моя цель — создавать музыку, которая находит отклик у слушателей, говорить о проблемах, 
-                которые волнуют каждого из нас.
+              <p className="text-lg leading-relaxed text-gray-300">
+                Мой стиль формировался под звуки города: гудки машин, голоса людей, ритм мегаполиса. 
+                Каждый трек — это история, каждая строчка — это опыт.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="bg-primary/20 text-primary px-4 py-2 rounded-full font-oswald font-bold">Old School</span>
-                <span className="bg-accent/20 text-accent px-4 py-2 rounded-full font-oswald font-bold">Boom Bap</span>
-                <span className="bg-primary/20 text-primary px-4 py-2 rounded-full font-oswald font-bold">Storytelling</span>
+              <div className="flex flex-wrap gap-3 mt-8">
+                <span className="bg-primary/20 text-primary px-4 py-2 rounded-full font-rap font-bold">BOOM BAP</span>
+                <span className="bg-accent/20 text-accent px-4 py-2 rounded-full font-rap font-bold">OLD SCHOOL</span>
+                <span className="bg-primary/20 text-primary px-4 py-2 rounded-full font-rap font-bold">TRAP</span>
+                <span className="bg-accent/20 text-accent px-4 py-2 rounded-full font-rap font-bold">DRILL</span>
               </div>
             </div>
             <div className="space-y-6">
-              <Card className="bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6">
+              <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-8">
                   <div className="flex items-center space-x-4 mb-4">
-                    <Icon name="Mic" size={32} className="text-primary" />
+                    <Icon name="Mic" size={40} className="text-primary" />
                     <div>
-                      <h4 className="font-oswald font-bold text-xl">Записи</h4>
-                      <p className="text-muted-foreground">Домашняя студия</p>
+                      <h4 className="font-rap font-bold text-2xl">Студийная работа</h4>
+                      <p className="text-gray-400">Профессиональная запись</p>
                     </div>
                   </div>
-                  <p>Работаю над качеством звука каждый день. Инвестирую в оборудование и изучаю новые техники записи.</p>
+                  <p className="text-gray-300">Работаю с лучшими продюсерами города. Каждый трек проходит через множество итераций, пока не зазвучит идеально.</p>
                 </CardContent>
               </Card>
-              <Card className="bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-6">
+              <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700 hover:border-accent/50 transition-all duration-300">
+                <CardContent className="p-8">
                   <div className="flex items-center space-x-4 mb-4">
-                    <Icon name="Users" size={32} className="text-accent" />
+                    <Icon name="Users" size={40} className="text-accent" />
                     <div>
-                      <h4 className="font-oswald font-bold text-xl">Коллаборации</h4>
-                      <p className="text-muted-foreground">Открыт для сотрудничества</p>
+                      <h4 className="font-rap font-bold text-2xl">Коллаборации</h4>
+                      <p className="text-gray-400">Работа с артистами</p>
                     </div>
                   </div>
-                  <p>Ищу единомышленников для совместных проектов. Считаю, что вместе можно создать что-то особенное.</p>
+                  <p className="text-gray-300">Открыт для сотрудничества с другими MC. Вместе мы можем создать что-то действительно мощное и значимое.</p>
                 </CardContent>
               </Card>
             </div>
@@ -134,119 +113,99 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Merch Section */}
-      <section id="merch" className="py-20">
+      {/* Music Platforms Section */}
+      <section id="music" className="py-20 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-12">
-            ОФИЦИАЛЬНЫЙ <span className="text-accent">МЕРЧ</span>
+          <h2 className="text-6xl md:text-7xl font-rap font-black text-center mb-16">
+            МОЯ <span className="text-primary">МУЗЫКА</span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {merch.map((item) => (
-              <Card key={item.id} className="group hover:scale-105 transition-all duration-300 bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-0">
-                  <div className="aspect-square bg-muted rounded-t-lg mb-4 overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-6 pt-0">
-                    <h3 className="font-oswald font-bold text-xl mb-2">{item.name}</h3>
-                    <div className="flex justify-between items-center">
-                      <span className="text-2xl font-bold text-primary">{item.price}</span>
-                      <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                        <Icon name="ShoppingCart" size={16} className="mr-2" />
-                        Купить
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <p className="text-xl text-center text-gray-400 mb-12 max-w-3xl mx-auto">
+            Слушайте мои треки на всех популярных платформах. Каждая песня — это часть моей души.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-br from-blue-600 to-blue-800 border-none hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-8 text-center">
+                <Icon name="Music" size={48} className="text-white mx-auto mb-4" />
+                <h3 className="font-rap font-bold text-2xl text-white mb-2">ВК Музыка</h3>
+                <p className="text-blue-100 mb-6">Все мои треки и эксклюзивы</p>
+                <Button className="bg-white text-blue-600 hover:bg-gray-100 font-rap font-bold">
+                  Слушать
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gradient-to-br from-yellow-500 to-red-500 border-none hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-8 text-center">
+                <Icon name="Music" size={48} className="text-white mx-auto mb-4" />
+                <h3 className="font-rap font-bold text-2xl text-white mb-2">Яндекс Музыка</h3>
+                <p className="text-yellow-100 mb-6">Качественное стриминг воспроизведение</p>
+                <Button className="bg-white text-red-600 hover:bg-gray-100 font-rap font-bold">
+                  Слушать
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gradient-to-br from-gray-800 to-black border-none hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-8 text-center">
+                <Icon name="Music" size={48} className="text-white mx-auto mb-4" />
+                <h3 className="font-rap font-bold text-2xl text-white mb-2">Apple Music</h3>
+                <p className="text-gray-300 mb-6">Для iOS и macOS пользователей</p>
+                <Button className="bg-white text-black hover:bg-gray-100 font-rap font-bold">
+                  Слушать
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* News Section */}
-      <section id="news" className="py-20 bg-secondary/30">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gradient-to-t from-black to-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-12">
-            ПОСЛЕДНИЕ <span className="text-primary">НОВОСТИ</span>
+          <h2 className="text-6xl md:text-7xl font-rap font-black text-center mb-16">
+            <span className="text-primary">СВЯЗЬ</span> СО МНОЙ
           </h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {news.map((item) => (
-              <Card key={item.id} className="bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="text-primary font-oswald font-bold text-sm mb-2">{item.date}</div>
-                  <h3 className="font-oswald font-bold text-xl mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contacts Section */}
-      <section id="contacts" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-12">
-            СВЯЗАТЬСЯ <span className="text-accent">СО МНОЙ</span>
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="font-oswald font-bold text-2xl mb-6">Социальные сети</h3>
-                <div className="space-y-4">
-                  <a href="#" className="flex items-center space-x-4 p-4 bg-card/50 rounded-lg hover:bg-card/70 transition-colors group">
-                    <Icon name="Music" size={24} className="text-primary group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-oswald font-bold">Spotify</div>
-                      <div className="text-muted-foreground text-sm">Слушай мои треки</div>
-                    </div>
-                  </a>
-                  <a href="#" className="flex items-center space-x-4 p-4 bg-card/50 rounded-lg hover:bg-card/70 transition-colors group">
-                    <Icon name="Youtube" size={24} className="text-primary group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-oswald font-bold">YouTube</div>
-                      <div className="text-muted-foreground text-sm">Клипы и интервью</div>
-                    </div>
-                  </a>
-                  <a href="#" className="flex items-center space-x-4 p-4 bg-card/50 rounded-lg hover:bg-card/70 transition-colors group">
-                    <Icon name="Instagram" size={24} className="text-primary group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-oswald font-bold">Instagram</div>
-                      <div className="text-muted-foreground text-sm">Закулисье и жизнь</div>
-                    </div>
-                  </a>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <h3 className="font-rap font-bold text-3xl text-accent mb-6">Давайте работать вместе</h3>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Открыт для новых проектов, коллабораций и предложений. 
+                Если у вас есть идеи или вы хотите обсудить сотрудничество — пишите!
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <Icon name="Mail" size={24} className="text-primary" />
+                  <span className="text-gray-300">rap.artist@email.com</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Icon name="Phone" size={24} className="text-primary" />
+                  <span className="text-gray-300">+7 (999) 123-45-67</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Icon name="MapPin" size={24} className="text-primary" />
+                  <span className="text-gray-300">Москва, Россия</span>
                 </div>
               </div>
-              <div>
-                <h3 className="font-oswald font-bold text-2xl mb-6">Для сотрудничества</h3>
-                <div className="space-y-4">
-                  <div className="p-4 bg-card/50 rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Icon name="Mail" size={20} className="text-primary" />
-                      <span className="font-oswald font-bold">Email</span>
-                    </div>
-                    <div className="text-muted-foreground">booking@rapper.ru</div>
-                  </div>
-                  <div className="p-4 bg-card/50 rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Icon name="Phone" size={20} className="text-primary" />
-                      <span className="font-oswald font-bold">Менеджер</span>
-                    </div>
-                    <div className="text-muted-foreground">+7 (999) 123-45-67</div>
-                  </div>
-                  <div className="p-4 bg-card/50 rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Icon name="MapPin" size={20} className="text-primary" />
-                      <span className="font-oswald font-bold">Город</span>
-                    </div>
-                    <div className="text-muted-foreground">Москва, Россия</div>
-                  </div>
-                </div>
+            </div>
+            <div className="space-y-6">
+              <h3 className="font-rap font-bold text-3xl text-accent mb-6">Социальные сети</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <Button size="lg" className="bg-gray-800 hover:bg-primary text-white font-rap font-bold border border-gray-700 hover:border-primary">
+                  <Icon name="Instagram" size={24} className="mr-2" />
+                  Instagram
+                </Button>
+                <Button size="lg" className="bg-gray-800 hover:bg-primary text-white font-rap font-bold border border-gray-700 hover:border-primary">
+                  <Icon name="Youtube" size={24} className="mr-2" />
+                  YouTube
+                </Button>
+                <Button size="lg" className="bg-gray-800 hover:bg-primary text-white font-rap font-bold border border-gray-700 hover:border-primary">
+                  <Icon name="MessageCircle" size={24} className="mr-2" />
+                  Telegram
+                </Button>
+                <Button size="lg" className="bg-gray-800 hover:bg-primary text-white font-rap font-bold border border-gray-700 hover:border-primary">
+                  <Icon name="Music" size={24} className="mr-2" />
+                  SoundCloud
+                </Button>
               </div>
             </div>
           </div>
@@ -254,11 +213,14 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card/30 py-8 border-t border-border">
+      <footer className="py-8 border-t border-gray-800 bg-black">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-2xl font-oswald font-bold text-primary mb-4 md:mb-0">АРТИСТ</div>
-            <div className="text-muted-foreground">© 2024 Все права защищены</div>
+            <div className="text-2xl font-rap font-bold text-primary mb-4 md:mb-0">RAP ARTIST</div>
+            <div className="text-gray-400 text-center md:text-right">
+              <p>&copy; 2024 Rap Artist. Все права защищены.</p>
+              <p className="text-sm mt-1">Создано с ❤️ для уличной культуры</p>
+            </div>
           </div>
         </div>
       </footer>
