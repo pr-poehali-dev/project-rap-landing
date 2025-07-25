@@ -3,11 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const tracks = [
-    { id: 1, title: "Улицы зовут", description: "Новый трек о жизни в городе", duration: "3:45" },
-    { id: 2, title: "Время перемен", description: "Мощный бит и честные строки", duration: "4:12" },
-    { id: 3, title: "Мой путь", description: "Личная история успеха", duration: "3:28" },
-  ];
 
   const merch = [
     { id: 1, name: "Худи с логотипом", price: "3999₽", image: "/img/49185ea2-b482-4fa4-8d82-a226525b0f91.jpg" },
@@ -30,7 +25,7 @@ const Index = () => {
             <div className="text-2xl font-oswald font-bold text-primary">АРТИСТ</div>
             <div className="hidden md:flex space-x-8">
               <a href="#home" className="hover:text-primary transition-colors">Главная</a>
-              <a href="#music" className="hover:text-primary transition-colors">Музыка</a>
+              <a href="#about" className="hover:text-primary transition-colors">О творчестве</a>
               <a href="#merch" className="hover:text-primary transition-colors">Мерч</a>
               <a href="#news" className="hover:text-primary transition-colors">Новости</a>
               <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
@@ -50,7 +45,7 @@ const Index = () => {
             РЭП<span className="text-primary">АРТИСТ</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto animate-fade-in">
-            Настоящая уличная культура. Честные тексты. Мощные биты.
+            Начинающий рэп-исполнитель из России. Пишу о том, что волнует молодежь — уличную жизнь, мечты и борьбу за место под солнцем.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
             <Button variant="outline" size="lg" className="font-oswald text-lg px-8">
@@ -86,36 +81,55 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Music Section */}
-      <section id="music" className="py-20 bg-secondary/30">
+      {/* About Section */}
+      <section id="about" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-12">
-            <span className="text-primary">МОЯ</span> МУЗЫКА
+            О <span className="text-primary">ТВОРЧЕСТВЕ</span>
           </h2>
-          <div className="grid gap-6 max-w-4xl mx-auto">
-            {tracks.map((track) => (
-              <Card key={track.id} className="bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 hover:scale-[1.02]">
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="font-oswald font-bold text-2xl mb-6 text-accent">Мой путь в рэпе</h3>
+              <p className="text-lg leading-relaxed mb-6">
+                Начал писать тексты в 16 лет, вдохновляясь уличной культурой и историями обычных людей. 
+                Каждый трек — это частичка моей души и взгляд на жизнь молодого поколения.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                Моя цель — создавать музыку, которая находит отклик у слушателей, говорить о проблемах, 
+                которые волнуют каждого из нас.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <span className="bg-primary/20 text-primary px-4 py-2 rounded-full font-oswald font-bold">Old School</span>
+                <span className="bg-accent/20 text-accent px-4 py-2 rounded-full font-oswald font-bold">Boom Bap</span>
+                <span className="bg-primary/20 text-primary px-4 py-2 rounded-full font-oswald font-bold">Storytelling</span>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <Card className="bg-card/50 backdrop-blur-sm">
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <Button size="sm" className="rounded-full w-12 h-12 bg-primary hover:bg-primary/90">
-                        <Icon name="Play" size={16} />
-                      </Button>
-                      <div>
-                        <h3 className="font-oswald font-bold text-xl">{track.title}</h3>
-                        <p className="text-muted-foreground">{track.description}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-muted-foreground text-sm">{track.duration}</div>
-                      <Button variant="ghost" size="sm">
-                        <Icon name="Download" size={16} />
-                      </Button>
+                  <div className="flex items-center space-x-4 mb-4">
+                    <Icon name="Mic" size={32} className="text-primary" />
+                    <div>
+                      <h4 className="font-oswald font-bold text-xl">Записи</h4>
+                      <p className="text-muted-foreground">Домашняя студия</p>
                     </div>
                   </div>
+                  <p>Работаю над качеством звука каждый день. Инвестирую в оборудование и изучаю новые техники записи.</p>
                 </CardContent>
               </Card>
-            ))}
+              <Card className="bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <Icon name="Users" size={32} className="text-accent" />
+                    <div>
+                      <h4 className="font-oswald font-bold text-xl">Коллаборации</h4>
+                      <p className="text-muted-foreground">Открыт для сотрудничества</p>
+                    </div>
+                  </div>
+                  <p>Ищу единомышленников для совместных проектов. Считаю, что вместе можно создать что-то особенное.</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
