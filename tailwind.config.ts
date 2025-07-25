@@ -21,8 +21,10 @@ export default {
 			fontFamily: {
 				'oswald': ['Oswald', 'sans-serif'],
 				'open-sans': ['Open Sans', 'sans-serif'],
-				'rap': ['Oswald', 'Impact', 'Arial Black', 'sans-serif'],
+				'rap': ['Bebas Neue', 'Oswald', 'Impact', 'Arial Black', 'sans-serif'],
 				'urban': ['Poppins', 'system-ui', 'sans-serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'bebas': ['Bebas Neue', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
