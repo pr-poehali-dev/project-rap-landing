@@ -53,14 +53,35 @@ const Index = () => {
             Настоящая уличная культура. Честные тексты. Мощные биты.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-oswald text-lg px-8">
-              <Icon name="Play" size={20} className="mr-2" />
-              Слушать музыку
-            </Button>
             <Button variant="outline" size="lg" className="font-oswald text-lg px-8">
               <Icon name="ShoppingBag" size={20} className="mr-2" />
               Купить мерч
             </Button>
+          </div>
+          
+          {/* Music Platforms */}
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <a 
+              href="#" 
+              className="flex items-center space-x-2 bg-card/50 hover:bg-card/70 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+            >
+              <Icon name="Music" size={20} className="text-primary" />
+              <span className="font-oswald font-bold">ВК Музыка</span>
+            </a>
+            <a 
+              href="#" 
+              className="flex items-center space-x-2 bg-card/50 hover:bg-card/70 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+            >
+              <Icon name="Music" size={20} className="text-accent" />
+              <span className="font-oswald font-bold">Яндекс Музыка</span>
+            </a>
+            <a 
+              href="#" 
+              className="flex items-center space-x-2 bg-card/50 hover:bg-card/70 px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+            >
+              <Icon name="Music" size={20} className="text-primary" />
+              <span className="font-oswald font-bold">Apple Music</span>
+            </a>
           </div>
         </div>
       </section>
